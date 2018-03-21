@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+{% endblock %}
+
+{% block main %}
+
+<div class = "box">
+	<img src="{{ url_for('static',filename="uploads/"+ new_profile.photo) }}" alt="Picture of User">
+
+	<h1> {{ new_profile.first_name }} {{ new_profile.last_name }} </h1>
+	<p class = "info"> {{ new_profile.email }}</p>
+	<p class = "info"> {{ new_profile.location }} </p>
+	<p class = "info"> Joined on: {{ new_profile.created_on }}</p>
+
+	<div class = "other_half">	
+
+		<div class="row">
+			<div class="col-md-12"> 
+				<div class = "about">
+					<p> {{ new_profile.biography }}
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="col-md-4"> 
+				<span class = "num"> 7</span>
+			</div>
+			<div class="col-md-4 mobile-padding-left"> 
+				<span class = "num"> 1</span>
+			</div>
+			<div class="col-md-4"> 
+				<span class = "num"> 734</span>
+			</div>
+			
+		</div>
+		
+		<div class="row"> 
+			<div class="col-md-4"> 
+				<span class = "follow_info"> 
+					Posts
+				</span>
+			</div>
+			<div class="col-md-4 mobile-padding-left"> 
+				<span class = "follow_info"> 
+					Following
+				</span>
+			</div>
+			<div class="col-md-4"> 
+				<span class = "follow_info"> 
+					Followers
+				</span>
+			</div>
+		</div>
+			
+		<div class="row">
+			<div class="col-md-12">
+				<button class="btn btn-success btn-lg">
+					Follow
+				</button>	
+			</div>
+		</div>
+		
+	</div>	
+</div>
+
+
+
+
+{% endblock %}

@@ -4,9 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "change this to be a more random key"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://lab5:matthew@localhost/lab5"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://admin:matthew@localhost/project1"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # added just to suppress a warning
 
+UPLOAD_FOLDER = './app/static/uploads'
 db = SQLAlchemy(app)
 
 # Flask-Login login manager
